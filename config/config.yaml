@@ -200,7 +200,7 @@ display:
   # 推送区域开关
   # 控制各区域是否启用（配合 region_order 使用）
   regions:
-    hotlist: true                     # 热榜区域（关键词匹配的热点新闻）
+    hotlist: false                   # 热榜区域（关键词匹配的热点新闻）
     new_items: false                   # 新增热点区域（含热榜新增 + RSS 新增）
                                       # 注：热点词汇统计中的新增标记🆕不受此配置影响
 
@@ -208,7 +208,7 @@ display:
                                       # 开启后将对 RSS 进行关键词分析并在通知中展示
                                       # 关闭后跳过分析，但独立展示区不受影响
 
-    standalone: false                 # 独立展示区（完整热榜/RSS，不受关键词过滤）
+    standalone: true                 # 独立展示区（完整热榜/RSS，不受关键词过滤）
     ai_analysis: true                 # AI 分析区域
 
   # 📋 独立展示区配置
@@ -218,8 +218,8 @@ display:
   #   - AI 分析：由 ai.include_standalone 开关控制，将完整数据送入 AI 做深度分析
   # 两者共享此处的平台/RSS 配置，但开关互相独立（可只开 AI 分析、不推送展示）
   standalone:
-    platforms: ["zhihu", "wallstreetcn-hot"]     # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
-    rss_feeds: []                     # RSS 源 ID 列表（如 ["hacker-news"]）
+    platforms: []     # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
+    rss_feeds: ["AI-news"]                     # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 20                     # 每个源最多展示条数（0=不限制）
 
 
